@@ -1,0 +1,19 @@
+\documentclass{amsart}
+\usepackage{times}
+\usepackage{courier}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsfonts,amssymb, amsthm}
+\usepackage{bm}
+\usepackage[ansinew]{inputenc}
+
+\begin{document}
+\title{CS 221 Project Proposal}
+\author{Stuart Sy and Yushi Homma}
+\date{October 20, 2015}
+\maketitle
+\section{Definition of Task}
+ESPN fantasy baseball is a common pastime for many Americans, which, coincidentally, defines a problem whose solution could potentially be predicted by artificial intelligence. The particular ESPN fantasy baseball game that we will analyze in this project is the ESPN Baseball Challenge. The basic task for these fantasy baseball participants is to predict which players will have successful games based on a standard scoring system and optimize the total score of their fantasy team. This scoring system is provided by ESPN.com, which is defined by the following formula:
+\begin{equation}
+\mathrm{Score} = \left[\mathrm{R} + \mathrm{TB} + \mathrm{BB} + \mathrm{SB}\right]_{\rm hitting} + \left[3\cdot \mathrm{`IP'} - 3\cdot \mathrm{ER} - 3\cdot \mathrm{H} - \mathrm{BB} + \mathrm{K} + 5 \cdot \mathrm{Win} \right]_{\rm pitching}
+\end{equation}
+\end{document}
