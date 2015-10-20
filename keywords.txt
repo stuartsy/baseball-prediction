@@ -1,0 +1,5 @@
+uniform cost search
+constraint-satisfaction
+baseball
+fantasy sports
+linear regression
