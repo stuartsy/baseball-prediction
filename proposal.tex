@@ -1,4 +1,4 @@
-\documentclass[12pt]{amsart}
+\documentclass[11pt]{amsart}
 \usepackage{times}
 \usepackage{courier}
 \usepackage[margin=1in]{geometry}
@@ -16,7 +16,7 @@
 ESPN fantasy baseball is a common pastime for many Americans, which, coincidentally, defines a problem whose solution could potentially be predicted by artificial intelligence. The particular ESPN fantasy baseball game that we will analyze in this project is the ESPN Baseball Challenge. The basic task for these fantasy baseball participants is to predict which players will have successful games based on a standard scoring system and optimize the total score of their fantasy team under a budget. The fantasy teams consist of 9 players (one for each fielding position plus DH) and an entire pitching staff. This scoring system is provided by ESPN.com, which we define below in Section \ref{eval}.
 
 \section{Literature Review}
-
+Upon searching for literature on similar topics, I came across two related former Stanford CS 229 project papers. ``Predicting the Major League Baseball Season", written by R. Jia, C. Wong, and D. Zeng, regarded predicting wins and losses of teams in a particular season. Another that I came across, ``Applying Machine Learning to MLB Prediction \& Analysis", similarly tried to predict games to be wins or losses based on previous statistics. 
 
 \section{Input/Output}
 \label{io}
@@ -36,7 +36,7 @@ $\mathrm{R}= (\mathrm{number\ of\ runs})$, $\mathrm{TB} = (\mathrm{total\ number
 
 The score for an entire pitching staff for a season is defined by:
 \begin{equation}
-3\cdot \mathrm{IP} - 3\cdot \mathrm{ER} - 3\cdot \mathrm{H} - \mathrm{BB} + \mathrm{K} + 5 \cdot \mathrm{W},
+3\cdot \mathrm{IP} - 3\cdot \mathrm{ER} - \mathrm{H} - \mathrm{BB} + \mathrm{K} + 5 \cdot \mathrm{W},
 \end{equation}
 where $\mathrm{IP}$ is the total number of innings piched, $\mathrm{ER}$ is the number of earned runs, $\mathrm{H}$ is the total number of hits that the pitching staff gave up, $\mathrm{BB} = (\mathrm{number\ of\ walks pitched})$, $\mathrm{K} = (\mathrm{number\ of\ strikeouts\ pitched})$, and $W = (\mathrm{number\ of\ wins})$.
 
@@ -54,6 +54,6 @@ As stated before, our task is to construct the best possible performing team (de
 
 One challenge that may be difficult to completely remedy is that our statistics only include season statistics instead of game-by-game statistics. This means that once we choose a team for a season, we have no additional information to change the members of the team during the season. However, in the ESPN Baseball Challenge, the fantasy baseball participants can change their rosters throughout the season, which could give them an advantage over our system due to fluctuations of players' performance throughout the season. This is why our oracle might not outperform the top participants of the ESPN Baseball Challenge, but it will be the best that we can aim toward with our algorithm.
 
-
-
+\section{Baseline and Oracle}
+We will perform our baseline and oracle on the year 2014. We defined our baseline to be just dividing the budget into equal parts to budget each individual position, and then obtaining the top-scoring player at each position from the previous year. We used 3/10 of the budget on the pitching staff because that is roughly how much MLB teams pay their pitchers. This leaves 3.9 million for each hitter and 15 million for the pitching staff. This resulted in a score of 4583. We defined our oracle to be the top participant in the ESPN Baseball Challenge in the year 2014. The oracle was GEORGETHEBOSS1 who got a score of 8362. Thus, there is room for much improvement.
 \end{document}
