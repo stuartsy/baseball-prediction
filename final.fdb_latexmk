@@ -1,5 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1449866743 "final.tex" "final.pdf" "final" 1449866746
+["pdflatex"] 1449875260 "final.tex" "final.pdf" "final" 1449875260
+  "./graphimage.png" 1449872732 22422 ddd003201b16e0ce9f6778a410ddd789 ""
+  "./table.png" 1449873806 25019 10afce80c7ac859ca6043fbf5d6b497a ""
   "/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -96,9 +98,11 @@
   "/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1432479641 1764542 91654ba72bdb667e84ea24f076ae16d8 ""
   "/usr/local/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt" 1432479681 3849859 39a7d258195bde2394e244961601fbc5 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "final.aux" 1449866745 1531 c71a11fb8d0015d5aabfdb7ab982f757 ""
-  "final.tex" 1449866742 17202 bb01ab6dec3bda6a88f6ed3789dd428d ""
+  "final.aux" 1449875260 1556 5d608079fc8a7efe01505587c9faed8c ""
+  "final.tex" 1449875258 18921 43e81ba821d866e8172abc2b90a7ff1a ""
+  "graphimage.png" 1449872732 22422 ddd003201b16e0ce9f6778a410ddd789 ""
+  "table.png" 1449873806 25019 10afce80c7ac859ca6043fbf5d6b497a ""
   (generated)
-  "final.pdf"
   "final.aux"
+  "final.pdf"
   "final.log"

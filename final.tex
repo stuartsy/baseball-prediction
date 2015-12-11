@@ -67,8 +67,8 @@ We will perform our baseline and oracle on the year 2014. We defined our baselin
 
 We used 3/10 of the budget on the pitching staff because that is roughly how much MLB teams pay their pitchers. This leaves 3.9 million for each hitter and 15 million for the pitching staff. This resulted in a score of 3712. We defined our oracle to the best team for 2014, knowing the 2014 actual scores beforehand. We just used our improved CSP algorithm to calculate this value, which was 6151. Thus, there is room for much improvement from the baseline to the oracle.
 
-\section{\large Linear Regression}
-The primary portion of our task was to predict the each year's scores of each player using the previous year's statistics for that player. There are a number of ways that we could have carried out the task, but we decided on the simple multiple linear regression. An advantage of using linear regression is that there is not much need to know much about how each variable factors into the prediction. Thus, the work lies in finding good features for the predictor to work with.
+\section{\large Machine Learning}
+The primary portion of our task was to predict the each year's scores of each player using the previous year's statistics for that player. There are a number of ways that we could have carried out the task, but we decided on testing multiple linear regression, logistic regression and support vector regression. We found that the linear regression performed the best in all cases (explained in Section \ref{error}), so the rest of this section will focus on our choice of linear regression. An advantage of using linear regression is that there is not much need to know much about how each variable factors into the prediction. Thus, the work lies in finding good features for the predictor to work with.
 \vspace{.4cm}
 
 The features we used clearly needed to include all of the factors taken into account in calculating the score. Thus, for batters, we included the number of runs, hits, doubles, triples, home runs, runs batted in, walks, and stolen bases. For pitchers, we included the number of innings pitched, earned runs, hits, walks, strikeouts and wins. However, we had many more stats at our disposal. We only included the stats that we thought would have a direct effect on the score next year. This included much of the stats regarding their performance in games, and very little of the biographical information like college and hometown. 
@@ -119,10 +119,27 @@ Yet, for some reason, this ended up decreasing the score of our calculated best 
 	\item Doubles had negative weight, even though it is a positive influence on score.\\
 	\item Games played for pitchers was negative weight, even though the more games means a better score.
 \end{itemize}
-With these factors with counterintuitive weights, we removed them from the prediction factors considered in the linear regression. We were met with decent success, adding anywhere from 50 to 150 points to the calculated best teams' total scores for each year.
-\section{\large Analysis of Results}
-% \includegraphics{graph1}
+\vspace{.4cm}
 
+With these factors with counterintuitive weights, we removed them from the prediction factors considered in the linear regression. We were met with decent success, adding anywhere from 50 to 150 points to the calculated best teams' total scores for each year.
+\section{\large Analysis of Results} \label{error}
+Our algorithm's slowest part is the CSP because the time complexity is $O(\#\ \mathrm{teams}\ \mathrm{searched})$. The number of possible teams is the product of the number of players at each position. Thus, the time complexity of our CSP algorithm, and total time complexity, is $O((n/10)^10) = O(n^10)$. The memory used is also the same because the algorithm had to store each of these teams with their player names, salary and score.
+\vspace{.4cm}
+
+As mentioned earlier, one of the choices that we made for the algorithm was which machine learning algorithm to use for predicting the score of each player. The graph below illustrates the scores of each of the algorithms considered in comparison with the oracle. Linear regression was the clear winner, with logistic regression and support vector regression scoring an average of over 1000 below linear regression.
+\vspace{.4cm}
+\begin{center}
+\includegraphics[scale=0.9]{graphimage.png}
+\end{center}
+
+Below is a table showing the results of our final algorithm in calculating the best team score possible for the years 2011-2014. 
+\vspace{.4cm}
+\begin{center}
+\includegraphics[scale=0.8]{table.png}
+\end{center}
+\vspace{.4cm}
+
+This table shows that our predicted scores from linear regression on the previous year's statistics are much higher than the actual scores calculated from the current year's statistics. This demonstrates the limitation of our algorithm in predicting the effectiveness of a player using his previous statistics.
 
 \section{\large Conclusions and Future Work}
 We found that even predicting a player's season rather than just one game is still variable to unseen factors. Furthermore, it is difficult to determine when a player will peak, which made the time-dependent factors less effective. Compared to our baseline in 2014, our algorithm performed approximately 700 points above, which is a significant amount. However, seeing that our algorithm still fell well below the oracle every year, there is still quite a bit of room for improvement. Nevertheless, this project showed that it is possible to improve on the teams' predictions of the value of their players by using machine learning on just the previous year's statistics.
