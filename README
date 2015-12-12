@@ -1,0 +1,5 @@
+All our code is in the BaseBall Data.ipynb file.
+
+To run our code, just run the command "ipython notebook" and open Baseball Data.ipynb.
+You can run our code from Cell->Run All in the notebook interface.
+
